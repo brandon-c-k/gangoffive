@@ -1,0 +1,10 @@
+#ifndef GANGOFFIVE_STOREDLAUNCHES_H
+#define GANGOFFIVE_STOREDLAUNCHES_H
+
+
+class StoredLaunches {
+
+};
+
+
+#endif //GANGOFFIVE_STOREDLAUNCHES_H

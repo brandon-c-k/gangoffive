@@ -1,9 +1,10 @@
 
+#include <string>
 #include "SecondStage.h"
 
 
-void SecondStage::getState() {
-
+std::string SecondStage::getStage() {
+    return "Second Stage";
 }
 
 SecondStage::SecondStage() {
@@ -14,6 +15,6 @@ SecondStage::~SecondStage() {
 
 }
 
-void SecondStage::handleChange() {
-
+void SecondStage::handleChange(Rocket *rocket) {
+    rocket->setState(new ReEntryFlop());
 }

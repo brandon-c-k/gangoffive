@@ -1,8 +1,8 @@
 
 #include "MainStage.h"
 
-void MainStage::getState() {
-
+std::string MainStage::getStage() {
+    return "Main Stage";
 }
 
 MainStage::MainStage() {
@@ -13,6 +13,6 @@ MainStage::~MainStage() {
 
 }
 
-void MainStage::handleChange() {
-
+void MainStage::handleChange(Rocket *rocket) {
+    rocket->setState(new SecondStage());
 }

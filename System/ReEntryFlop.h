@@ -1,14 +1,14 @@
 #ifndef GANGOFFIVE_REENTRYFLOP_H
 #define GANGOFFIVE_REENTRYFLOP_H
 
-#include "State.h"
+#include "LandingBurn.h"
 
-// Concrete State participant of State
-class ReEntryFlop: public State{
+// Concrete RocketState participant of RocketState
+class ReEntryFlop: public RocketState{
 public:
     ReEntryFlop();
-    virtual void getState();
-    virtual void handleChange();
+    virtual std::string getStage();
+    virtual void handleChange(Rocket *rocket);
     virtual ~ReEntryFlop();
 };
 

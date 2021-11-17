@@ -1,14 +1,14 @@
 #ifndef GANGOFFIVE_MAINSTAGE_H
 #define GANGOFFIVE_MAINSTAGE_H
 
-#include "State.h"
+#include "SecondStage.h"
 
-// Concrete State participant of State
-class MainStage: public State{
+// Concrete RocketState participant of RocketState
+class MainStage: public RocketState{
 public:
     MainStage();
-    virtual void handleChange();
-    virtual void getState();
+    virtual void handleChange(Rocket *rocket);
+    virtual std::string getStage();
     virtual ~MainStage();
 };
 

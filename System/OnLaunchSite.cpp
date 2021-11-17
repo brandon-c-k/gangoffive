@@ -1,8 +1,8 @@
 
 #include "OnLaunchSite.h"
 
-void OnLaunchSite::getState() {
-
+std::string OnLaunchSite::getStage() {
+    return "On Launch Pad";
 }
 
 OnLaunchSite::OnLaunchSite() {
@@ -13,6 +13,6 @@ OnLaunchSite::~OnLaunchSite() {
 
 }
 
-void OnLaunchSite::handleChange() {
-
+void OnLaunchSite::handleChange(Rocket *rocket) {
+    rocket->setState(new LiftOff());
 }

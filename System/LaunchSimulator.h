@@ -1,0 +1,10 @@
+#ifndef GANGOFFIVE_LAUNCHSIMULATOR_H
+#define GANGOFFIVE_LAUNCHSIMULATOR_H
+
+
+class LaunchSimulator {
+
+};
+
+
+#endif //GANGOFFIVE_LAUNCHSIMULATOR_H

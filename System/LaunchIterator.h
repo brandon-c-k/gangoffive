@@ -1,0 +1,10 @@
+#ifndef GANGOFFIVE_LAUNCHITERATOR_H
+#define GANGOFFIVE_LAUNCHITERATOR_H
+
+
+class LaunchIterator {
+
+};
+
+
+#endif //GANGOFFIVE_LAUNCHITERATOR_H

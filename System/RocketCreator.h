@@ -1,0 +1,11 @@
+
+#ifndef GANGOFFIVE_ROCKETCREATOR_H
+#define GANGOFFIVE_ROCKETCREATOR_H
+
+
+class RocketCreator {
+
+};
+
+
+#endif //GANGOFFIVE_ROCKETCREATOR_H

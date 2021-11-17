@@ -1,8 +1,8 @@
 
 #include "LandingBurn.h"
 
-void LandingBurn::getState() {
-
+std::string LandingBurn::getStage() {
+    return "Landing Burn";
 }
 
 LandingBurn::LandingBurn() {
@@ -13,6 +13,6 @@ LandingBurn::~LandingBurn() {
 
 }
 
-void LandingBurn::handleChange() {
-
+void LandingBurn::handleChange(Rocket *rocket) {
+    rocket->setState(nullptr);
 }

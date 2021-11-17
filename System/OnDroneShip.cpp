@@ -1,8 +1,8 @@
 
 #include "OnDroneShip.h"
 
-void OnDroneShip::getState() {
-
+std::string OnDroneShip::getStage() {
+    return "On Drone Ship";
 }
 
 OnDroneShip::OnDroneShip() {
@@ -13,6 +13,6 @@ OnDroneShip::~OnDroneShip() {
 
 }
 
-void OnDroneShip::handleChange() {
+void OnDroneShip::handleChange(Rocket *rocket) {
 
 }

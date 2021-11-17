@@ -1,14 +1,15 @@
 #ifndef GANGOFFIVE_STATICFIRE_H
 #define GANGOFFIVE_STATICFIRE_H
 
-#include "State.h"
+#include "RocketState.h"
+#include "OnLaunchSite.h"
 
-// Concrete State participant of State
-class StaticFire: public State{
+// Concrete RocketState participant of RocketState
+class StaticFire: public RocketState {
 public:
     StaticFire();
-    virtual void handleChange();
-    virtual void getState();
+    virtual void handleChange(Rocket *rocket);
+    virtual std::string getStage();
     virtual ~StaticFire();
 };
 

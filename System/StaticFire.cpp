@@ -1,7 +1,7 @@
 #include "StaticFire.h"
 
-void StaticFire::getState() {
-
+std::string StaticFire::getStage() {
+    return "Static Fire";
 }
 
 StaticFire::StaticFire() {
@@ -12,6 +12,6 @@ StaticFire::~StaticFire() {
 
 }
 
-void StaticFire::handleChange() {
-
+void StaticFire::handleChange(Rocket* rocket) {
+    rocket->setState(new OnLaunchSite());
 }

@@ -1,14 +1,19 @@
 #ifndef GANGOFFIVE_ONDRONESHIP_H
 #define GANGOFFIVE_ONDRONESHIP_H
 
-#include "State.h"
+#include "RocketState.h"
 
-// Concrete State participant of State
-class OnDroneShip: public State{
+/*
+    Not sure what to do with this one, since the whole rocket
+    doesn't land on the drone ship, and it happens in between other stages
+*/
+
+// Concrete RocketState participant of RocketState
+class OnDroneShip: public RocketState{
 public:
     OnDroneShip();
-    virtual void getState();
-    virtual void handleChange();
+    virtual std::string getStage();
+    virtual void handleChange(Rocket *rocket);
     virtual ~OnDroneShip();
 };
 

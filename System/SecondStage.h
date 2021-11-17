@@ -1,14 +1,14 @@
 #ifndef GANGOFFIVE_SECONDSTAGE_H
 #define GANGOFFIVE_SECONDSTAGE_H
 
-#include "State.h"
+#include "ReEntryFlop.h"
 
-// Concrete State participant of State
-class SecondStage: public State{
+// Concrete RocketState participant of RocketState
+class SecondStage: public RocketState{
 public:
     SecondStage();
-    virtual void getState();
-    virtual void handleChange();
+    virtual std::string getStage();
+    virtual void handleChange(Rocket *rocket);
     virtual ~SecondStage();
 };
 

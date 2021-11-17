@@ -1,7 +1,7 @@
 #include "LiftOff.h"
 
-void LiftOff::getState() {
-
+std::string LiftOff::getStage() {
+    return "Lift Off!";
 }
 
 LiftOff::LiftOff() {
@@ -12,6 +12,6 @@ LiftOff::~LiftOff() {
 
 }
 
-void LiftOff::handleChange() {
-
+void LiftOff::handleChange(Rocket *rocket) {
+    rocket->setState(new MainStage());
 }
