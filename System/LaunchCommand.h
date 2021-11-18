@@ -5,6 +5,10 @@
 
 class LaunchCommand: public Command{
 
+public:
+    LaunchCommand(Rocket*);
+    void execute();
+    void undo();
 };
 
 

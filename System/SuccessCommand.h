@@ -4,7 +4,9 @@
 #include "Command.h"
 
 class SuccessCommand: public Command{
-
+    SuccessCommand(Rocket*);
+    void execute();
+    void undo();
 };
 
 

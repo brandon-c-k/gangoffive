@@ -2,8 +2,12 @@
 #define GANGOFFIVE_FIRSTSTAGECOMMAND_H
 
 
-class FirstStageCommand {
+#include "Command.h"
 
+class FirstStageCommand: public Command {
+    FirstStageCommand(Rocket*);
+    void execute();
+    void undo();
 };
 
 
