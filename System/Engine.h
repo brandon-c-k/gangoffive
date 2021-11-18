@@ -6,6 +6,7 @@ class Engine {
 public:
     virtual void update() =0;
     virtual void clone(Engine *) = 0;
+    int getID() ;
 
 private:
     // State* observerState;

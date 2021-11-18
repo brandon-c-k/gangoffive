@@ -3,7 +3,15 @@
 
 #include "Rocket.h"
 class Falcon9: public Rocket {
-
+    Falcon9(int f) ;
+    ~Falcon9() ;
+    virtual void staticFire();
+    virtual void launch();
+    virtual void firstStage();
+    virtual void abort();
+    virtual void pause();
+    virtual void success();
+    virtual void dock();
 };
 
 
