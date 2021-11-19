@@ -11,7 +11,7 @@ class Falcon9: public Rocket {
     virtual void abort();
     virtual void pause();
     virtual void success();
-    virtual void dock();
+    virtual void dock(ISS*);
 };
 
 

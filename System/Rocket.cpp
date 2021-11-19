@@ -32,6 +32,10 @@ std::string Rocket::getStage() {
     return stage->getStage();
 }
 
+void Rocket::addSpacecraft(DragonSpacecraft* s){
+    spacecraft = s ;
+}
+
 void Rocket::notifyEngines() {
     Engine *e ;
     vector<Engine*>:: iterator it;

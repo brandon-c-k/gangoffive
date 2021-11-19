@@ -4,6 +4,7 @@
 #include <vector>
 #include <iostream>
 #include "Engine.h"
+#include "ISS.h"
 
 class RocketState; //Forward declaration because of circular dependency in state pattern
 
@@ -20,9 +21,10 @@ public:
     virtual void launch()= 0;
     virtual void firstStage() = 0;
     virtual void abort() = 0;
-    virtual void pause() = 0;
+    virtual void reverseState() = 0;
     virtual void success() = 0;
-    virtual void dock() = 0;
+    virtual void dock(ISS*) = 0;
+    void addSpacecraft(DragonSpacecraft*) ;
     void notifyEngines();
     void addEngine(Engine *);
     void removeEngine(Engine *);

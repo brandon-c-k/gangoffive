@@ -1,9 +1,12 @@
 #ifndef GANGOFFIVE_FIRSTSTAGECOMMAND_H
 #define GANGOFFIVE_FIRSTSTAGECOMMAND_H
 
+#include "Command.h"
 
 class FirstStageCommand {
-
+    FirstStageCommand(Rocket*) ;
+    virtual void execute() ;
+    virtual void undo() ;
 };
 
 
