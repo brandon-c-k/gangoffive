@@ -4,6 +4,7 @@
 #include "Command.h"
 
 class StaticFireCommand: public Command{
+
     StaticFireCommand(Rocket*) ;
     virtual void execute() ;
     virtual void undo() ;

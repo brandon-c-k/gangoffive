@@ -4,6 +4,7 @@
 #include "Command.h"
 
 class PauseCommand: public Command{
+
     PauseCommand(Rocket*) ;
     virtual void execute() ;
     virtual void undo() ;

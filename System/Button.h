@@ -8,6 +8,11 @@ class Button {
 
 private:
     Command* command;
+  
+
+public:
+    Button(Command*);
+    void press();
 };
 
 

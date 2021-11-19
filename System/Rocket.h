@@ -4,7 +4,10 @@
 #include <vector>
 #include <iostream>
 #include "Engine.h"
+using namespace std;
+
 #include "ISS.h"
+
 
 class RocketState; //Forward declaration because of circular dependency in state pattern
 

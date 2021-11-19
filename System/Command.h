@@ -2,6 +2,7 @@
 #define GANGOFFIVE_COMMAND_H
 
 #include "Rocket.h"
+
 class Command {
 public:
     Command(Rocket*);

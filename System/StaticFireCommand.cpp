@@ -1,5 +1,6 @@
 #include "StaticFireCommand.h"
 
+
 StaticFireCommand::StaticFireCommand(Rocket* r):Command{r} {}
 
 StaticFireCommand::execute(){

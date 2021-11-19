@@ -1,5 +1,6 @@
 #include "AbortCommand.h"
 
+
 AbortCommand::AbortCommand(Rocket* r):Command{r} {}
 
 AbortCommand::execute(){

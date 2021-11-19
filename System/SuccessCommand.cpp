@@ -1,5 +1,6 @@
 #include "SuccessCommand.h"
 
+
 SuccessCommand::SuccessCommand(Rocket* r):Command{r} {}
 
 SuccessCommand::execute(){
@@ -9,3 +10,4 @@ SuccessCommand::execute(){
 SuccessCommand::undo(){
     //figure out
 }
+

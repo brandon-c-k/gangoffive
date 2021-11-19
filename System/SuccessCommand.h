@@ -7,6 +7,7 @@ class SuccessCommand: public Command{
     SuccessCommand(Rocket*) ;
     virtual void execute() ;
     virtual void undo() ;
+
 };
 
 
