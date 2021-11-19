@@ -1,7 +1,7 @@
 #ifndef GANGOFFIVE_LIFTOFF_H
 #define GANGOFFIVE_LIFTOFF_H
 
-#include "MainStage.h"
+#include "ReleaseFirst.h"
 
 // Concrete RocketState participant of RocketState
 class LiftOff: public RocketState{
@@ -11,6 +11,5 @@ public:
     virtual void handleChange(Rocket *rocket);
     virtual ~LiftOff();
 };
-
 
 #endif //GANGOFFIVE_LIFTOFF_H

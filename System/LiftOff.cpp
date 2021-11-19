@@ -13,5 +13,5 @@ LiftOff::~LiftOff() {
 }
 
 void LiftOff::handleChange(Rocket *rocket) {
-    rocket->setState(new MainStage());
+    rocket->setState(new ReleaseFirst());
 }
