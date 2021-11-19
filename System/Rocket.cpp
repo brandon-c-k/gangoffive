@@ -1,8 +1,9 @@
 
 #include "Rocket.h"
 #include "StaticFire.h"
-Rocket::Rocket() {
+Rocket::Rocket(int f) {
     this->stage = new StaticFire();
+    this->fuel = f ;
 }
 
 Rocket::~Rocket() {
@@ -31,42 +32,35 @@ std::string Rocket::getStage() {
     return stage->getStage();
 }
 
-void Rocket::staticFire() {
-
-}
-
-void Rocket::launch() {
-
-}
-
-void Rocket::firstStage() {
-
-}
-
-void Rocket::abort() {
-
-}
-
-void Rocket::pause() {
-
-}
-
-void Rocket::success() {
-
-}
-
-void Rocket::dock() {
-
+void Rocket::addSpacecraft(DragonSpacecraft* s){
+    spacecraft = s ;
 }
 
 void Rocket::notifyEngines() {
-
+    Engine *e ;
+    vector<Engine*>:: iterator it;
+    for (it = engineList.begin(); it != engineList.end(); ++it){
+        e = *it ;
+        cout << "Merlin engine " << e->getID() << " notified of changes." << endl ;
+        e->update() ;
+    }
 }
 
-void Rocket::addEngine(Engine *) {
-
+void Rocket::addEngine(Engine * e) {
+    engineList.push_back(e) ;
+    cout << "Merlin Engine " << e->getID() << " added to rocket" << endl; 
 }
 
 void Rocket::removeEngine(Engine *) {
+    bool found = false;
 
+    vector<Engine*>::iterator it = engineList.begin();
+    while ((it != engineList.end()) && (! found)) {
+        if (*it == o) {
+            found = true;
+            cout << "Merlin Engine " << (it).getID() << " removed from rocket" << endl ;
+            engineList.erase(it);
+        }
+        ++it;
+    }
 }

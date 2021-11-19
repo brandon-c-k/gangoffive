@@ -3,7 +3,15 @@
 
 
 class DragonSpacecraft {
+    public:
+        DragonSpacecraft(int c);
+        int getCargo() ;
+        bool getDockStatus() ;
+        void setDockStatus(bool) ;
 
+    private:
+        int cargo ;
+        bool dockStatus ;
 };
 
 

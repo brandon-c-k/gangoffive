@@ -1,14 +1,11 @@
 #include "FirstStageCommand.h"
 
-FirstStageCommand::FirstStageCommand(Rocket* r) : Command(r){
+FirstStageCommand::FirstStageCommand(Rocket* r):Command{r} {}
 
+FirstStageCommand::execute(){
+    receiver->firstStage() ;
 }
 
-void FirstStageCommand::execute(){
-    getReciever()->firstStage();
-}
-
-//
-void FirstStageCommand::undo(){
-    getReciever()->pause();
+FirstStageCommand::undo(){
+    //figure out
 }

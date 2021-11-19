@@ -1,14 +1,12 @@
 #include "PauseCommand.h"
 
-PauseCommand::PauseCommand(Rocket* r) : Command(r){
 
+PauseCommand::PauseCommand(Rocket* r):Command{r} {}
+
+PauseCommand::execute(){
+    receiver->pause() ;
 }
 
-void PauseCommand::execute(){
-    getReciever()->pause();
-}
-
-//how to undo a pause?
-void PauseCommand::undo(){
-
+PauseCommand::undo(){
+    //figure out
 }

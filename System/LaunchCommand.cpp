@@ -1,14 +1,12 @@
 #include "LaunchCommand.h"
 
-LaunchCommand::LaunchCommand(Rocket* r) : Command(r){
 
+LaunchCommand::LaunchCommand(Rocket* r):Command{r} {}
+
+LaunchCommand::execute(){
+    receiver->launch() ;
 }
 
-void LaunchCommand::execute(){
-    getReciever()->launch();
-}
-
-//maybe change to  
-void LaunchCommand::undo(){
-    getReciever()->abort();
+LaunchCommand::undo(){
+    //figure out
 }

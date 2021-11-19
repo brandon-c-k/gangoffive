@@ -1,14 +1,12 @@
 #include "AbortCommand.h"
 
-AbortCommand::AbortCommand(Rocket* r) : Command(r){
 
+AbortCommand::AbortCommand(Rocket* r):Command{r} {}
+
+AbortCommand::execute(){
+    receiver->abort() ;
 }
 
-void AbortCommand::execute(){
-    getReciever()->abort();
-}
-
-//
-void AbortCommand::undo(){
-
+AbortCommand::undo(){
+    //figure out
 }

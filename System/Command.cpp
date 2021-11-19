@@ -7,7 +7,3 @@ Command::Command(Rocket * r) {
 Command::~Command() {
     delete receiver;
 }
-
-Rocket* Command::getReciever(){
-    return receiver;
-}

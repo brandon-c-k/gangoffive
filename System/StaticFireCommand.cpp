@@ -1,14 +1,12 @@
 #include "StaticFireCommand.h"
 
-StaticFireCommand::StaticFireCommand(Rocket* r) : Command(r){
 
+StaticFireCommand::StaticFireCommand(Rocket* r):Command{r} {}
+
+StaticFireCommand::execute(){
+    receiver->staticFire() ;
 }
 
-void StaticFireCommand::execute(){
-    getReciever()->staticFire();
-}
-
-//
-void StaticFireCommand::undo(){
-    getReciever()->abort();
+StaticFireCommand::undo(){
+    //figure out
 }

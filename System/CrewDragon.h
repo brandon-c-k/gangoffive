@@ -4,7 +4,12 @@
 #include "DragonSpacecraft.h"
 
 class CrewDragon:  public DragonSpacecraft{
+    public:
+        CrewDragon(int crewAmount, int cargoAmount);
+        int getCrew() ;
 
+    private:
+        int crew ;
 };
 
 

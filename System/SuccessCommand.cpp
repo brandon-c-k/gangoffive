@@ -1,14 +1,13 @@
 #include "SuccessCommand.h"
 
-SuccessCommand::SuccessCommand(Rocket* r) : Command(r){
 
+SuccessCommand::SuccessCommand(Rocket* r):Command{r} {}
+
+SuccessCommand::execute(){
+    receiver->success() ;
 }
 
-void SuccessCommand::execute(){
-    getReciever()->success();
+SuccessCommand::undo(){
+    //figure out
 }
 
-//
-void SuccessCommand::undo(){
-    getReciever()->pause();
-}

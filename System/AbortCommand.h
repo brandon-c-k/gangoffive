@@ -4,9 +4,10 @@
 #include "Command.h"
 
 class AbortCommand: public Command {
-    AbortCommand(Rocket*);
-    void execute();
-    void undo();
+
+    AbortCommand(Rocket*) ;
+    virtual void execute() ;
+    virtual void undo() ;
 };
 
 
