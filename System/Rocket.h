@@ -2,6 +2,7 @@
 #define GANGOFFIVE_ROCKET_H
 #include <string>
 #include "Engine.h"
+using namespace std;
 
 class RocketState; //Forward declaration because of circular dependency in state pattern
 
