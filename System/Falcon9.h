@@ -3,8 +3,10 @@
 
 #include "Rocket.h"
 class Falcon9: public Rocket {
+public:
     Falcon9(int f) ;
-    ~Falcon9() ;
+    Falcon9();
+    virtual ~Falcon9() ;
     virtual void staticFire();
     virtual void launch();
     virtual void firstStage();
@@ -12,6 +14,7 @@ class Falcon9: public Rocket {
     virtual void pause();
     virtual void success();
     virtual void dock(ISS*);
+    virtual void reverseState();
 };
 
 

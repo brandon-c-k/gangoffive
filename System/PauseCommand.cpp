@@ -3,10 +3,10 @@
 
 PauseCommand::PauseCommand(Rocket* r):Command{r} {}
 
-PauseCommand::execute(){
+void PauseCommand::execute(){
     receiver->pause() ;
 }
 
-PauseCommand::undo(){
+void PauseCommand::undo(){
     //figure out
 }

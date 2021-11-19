@@ -9,6 +9,6 @@ ISS::~ISS(){
 }
 
 void ISS::welcome(Rocket* r){
-    cout << "The International Space Station welcomes the arrival of the Rocket." << endl ;
+    std::cout << "The International Space Station welcomes the arrival of the Rocket." << std::endl ;
     arrivalPad->accept(r) ;
 }

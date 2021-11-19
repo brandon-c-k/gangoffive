@@ -3,11 +3,11 @@
 
 SuccessCommand::SuccessCommand(Rocket* r):Command{r} {}
 
-SuccessCommand::execute(){
+void SuccessCommand::execute(){
     receiver->success() ;
 }
 
-SuccessCommand::undo(){
+void SuccessCommand::undo(){
     //figure out
 }
 

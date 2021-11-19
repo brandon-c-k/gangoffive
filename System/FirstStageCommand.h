@@ -3,7 +3,7 @@
 
 #include "Command.h"
 
-class FirstStageCommand {
+class FirstStageCommand: public Command {
     FirstStageCommand(Rocket*) ;
     virtual void execute() ;
     virtual void undo() ;

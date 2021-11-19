@@ -3,10 +3,10 @@
 
 LaunchCommand::LaunchCommand(Rocket* r):Command{r} {}
 
-LaunchCommand::execute(){
+void LaunchCommand::execute(){
     receiver->launch() ;
 }
 
-LaunchCommand::undo(){
+void LaunchCommand::undo(){
     //figure out
 }

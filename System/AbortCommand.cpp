@@ -3,10 +3,10 @@
 
 AbortCommand::AbortCommand(Rocket* r):Command{r} {}
 
-AbortCommand::execute(){
+void AbortCommand::execute(){
     receiver->abort() ;
 }
 
-AbortCommand::undo(){
+void AbortCommand::undo(){
     //figure out
 }

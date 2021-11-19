@@ -3,10 +3,10 @@
 
 StaticFireCommand::StaticFireCommand(Rocket* r):Command{r} {}
 
-StaticFireCommand::execute(){
+void StaticFireCommand::execute(){
     receiver->staticFire() ;
 }
 
-StaticFireCommand::undo(){
+void StaticFireCommand::undo(){
     //figure out
 }

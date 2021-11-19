@@ -45,3 +45,11 @@ MementoNode* StoredLaunches::getLastNode(){
     return last;
     
 }
+
+LaunchIterator StoredLaunches::begin() {
+    return LaunchIterator();
+}
+
+LaunchIterator StoredLaunches::end() {
+    return LaunchIterator();
+}

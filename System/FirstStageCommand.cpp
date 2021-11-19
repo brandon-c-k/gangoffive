@@ -2,10 +2,10 @@
 
 FirstStageCommand::FirstStageCommand(Rocket* r):Command{r} {}
 
-FirstStageCommand::execute(){
+void FirstStageCommand::execute(){
     receiver->firstStage() ;
 }
 
-FirstStageCommand::undo(){
+void FirstStageCommand::undo(){
     //figure out
 }

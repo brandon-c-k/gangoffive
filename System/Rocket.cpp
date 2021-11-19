@@ -56,11 +56,19 @@ void Rocket::removeEngine(Engine *) {
 
     vector<Engine*>::iterator it = engineList.begin();
     while ((it != engineList.end()) && (! found)) {
-        if (*it == o) {
+        if (*it == 0) {
             found = true;
-            cout << "Merlin Engine " << (it).getID() << " removed from rocket" << endl ;
+            cout << "Merlin Engine " << (*it)->getID() << " removed from rocket" << endl ;
             engineList.erase(it);
         }
         ++it;
     }
+}
+
+Rocket::Rocket() {
+
+}
+
+DragonSpacecraft *Rocket::getSpacecraft() {
+    return spacecraft;
 }
