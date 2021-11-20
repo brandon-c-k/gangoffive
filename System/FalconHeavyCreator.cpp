@@ -1,5 +1,5 @@
 #include "FalconHeavyCreator.h"
 
-Rocket* FalconHeavyCreator::createFalconHeavy(){
-    return new FalconHeavy();
+Rocket* FalconHeavyCreator::createFalconHeavy(int fuel){
+    return new FalconHeavy(fuel);
 }

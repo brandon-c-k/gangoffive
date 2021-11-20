@@ -7,7 +7,7 @@
 
 class FalconHeavyCreator: public RocketCreator{
 public:
-    Rocket* createFalconHeavy(); 
+    Rocket* createFalconHeavy(int); 
 };
 
 
