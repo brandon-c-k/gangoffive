@@ -1,6 +1,6 @@
 #include "Memento.h"
 
-Memento::Memento(int a, int f, DragonSpacecraft* s, vector<Engine*>, e, RocketState* st){
+Memento::Memento(int a, int f, DragonSpacecraft* s, std::vector<Engine*> e, RocketState* st){
     altitude = a ;
     fuel = f ;
     spacecraft = s ;
@@ -30,6 +30,6 @@ RocketState* Memento::getStage(){
     return stage ;
 }
 
-vector<Engine*> Memento::getEngineList(){
+std::vector<Engine*> Memento::getEngineList(){
     return engineList ;
 }

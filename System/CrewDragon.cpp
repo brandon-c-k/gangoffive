@@ -2,7 +2,7 @@
 
 CrewDragon::CrewDragon(int cargoAmount, int crewAmount) : DragonSpacecraft{cargoAmount} {
     crew = crewAmount ;
-    hasCrew = true ;
+    setCrewShip(true) ;
 }
 
 int CrewDragon::getCrew() {

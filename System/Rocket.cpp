@@ -97,11 +97,11 @@ void Rocket::reverseState(){
     
 }
 
-Memento* createMemento() {
-    return new Memento(altitude, fuel, engineList, stage);
+Memento* Rocket::createMemento() {
+    return new Memento(altitude, fuel, spacecraft, engineList, stage);
 }
 
-void restoreRocket(Memento* mem){
+void Rocket::restoreRocket(Memento* mem){
     altitude = mem->getAltitude() ;
     fuel = mem->getFuel() ;
     engineList = mem->getEngineList() ;

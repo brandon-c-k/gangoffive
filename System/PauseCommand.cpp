@@ -4,7 +4,7 @@
 PauseCommand::PauseCommand(Rocket* r):Command{r} {}
 
 void PauseCommand::execute(){
-    receiver->pause() ;
+    //receiver->pause() ;
 }
 
 void PauseCommand::undo(){

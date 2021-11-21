@@ -38,9 +38,9 @@ void FalconHeavy::abort() {
 void FalconHeavy::success() {
     //return cost and fuel consumption
     if(getState()->getStage() == "Docked"){
-        cout<< "Falcon Heavy rocket successfully delivered " << getSpacecraft()->getCargo() << " kgs of cargo" 
+        cout<< "Falcon Heavy rocket successfully delivered " << getSpacecraft()->getCargo() << " kgs of cargo" ;
         if(getSpacecraft()->hasCrew())
-            cout<< " and " << getSpacecraft()->getCrew() << " crew members" 
+            cout<< " and " << getSpacecraft()->getCrew() << " crew members" ;
         
         cout << " to the ISS" << endl ;
         getState()->handleChange(this) ;
@@ -50,7 +50,7 @@ void FalconHeavy::success() {
     }
 }
 
-void Falcon9::dock(ISS* spaceStation) {
+void FalconHeavy::dock(ISS* spaceStation) {
     if(getState()->getStage() == "First Stage Released"){
         cout<<"Falcon Heavy rocket is approaching the ISS." << endl ;
         spaceStation->welcome(this) ;
@@ -64,5 +64,9 @@ void Falcon9::dock(ISS* spaceStation) {
 
 FalconHeavy::FalconHeavy() {
 
+}
+
+void FalconHeavy::reverseState() {
+    Rocket::reverseState();
 }
 

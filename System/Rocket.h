@@ -8,6 +8,7 @@
 #include "Engine.h"
 #include "ISS.h"
 #include "DragonSpacecraft.h"
+#include "Memento.h"
 using namespace std;
 
 class RocketState; //Forward declaration because of circular dependency in state pattern

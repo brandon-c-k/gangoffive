@@ -20,3 +20,11 @@ void DragonSpacecraft::setDockStatus(bool d){
 bool DragonSpacecraft::hasCrew(){
     return crewShip; 
 }
+
+void DragonSpacecraft::setCrewShip(bool c) {
+    this->crewShip = c;
+}
+
+DragonSpacecraft::~DragonSpacecraft() {
+
+}

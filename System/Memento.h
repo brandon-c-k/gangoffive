@@ -1,23 +1,25 @@
 #ifndef GANGOFFIVE_MEMENTO_H
 #define GANGOFFIVE_MEMENTO_H
-
-#include "RocketState.h"
+#include <vector>
+#include "DragonSpacecraft.h"
+#include "Engine.h"
+class RocketState;
 class Memento {
 private:
     int altitude ;
     int fuel ;
     DragonSpacecraft* spacecraft ;
-    vector<Engine*> engineList;
+    std::vector<Engine*> engineList;
     RocketState* stage ;
 
 public:
-    Memento(int a, int f, DragonSpacecraft* s, vector<Engine*>, e, RocketState* st);
+    Memento(int a, int f, DragonSpacecraft* s, std::vector<Engine*> e, RocketState* st);
     ~Memento() ;
     int getAltitude() ;
-    int getfuel() ;
+    int getFuel();
     DragonSpacecraft* getSpacecraft() ;
     RocketState* getStage() ;
-    vector<Engine*> getEngineList() ;
+    std::vector<Engine*> getEngineList() ;
 
 };
 
