@@ -19,6 +19,7 @@ public:
     LaunchIterator begin();
     LaunchIterator end();
     MementoNode* getLastNode();
+    MementoNode* getHead() ;
 };
 
 

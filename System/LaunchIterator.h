@@ -8,6 +8,9 @@ public:
     LaunchIterator();
     LaunchIterator(StoredLaunches*, MementoNode* );
     ~LaunchIterator();
+    MementoNode* first() ;
+    MementoNode* next() ;
+    MementoNode* currentItem() ;
 protected:
     MementoNode* head;
     MementoNode* current;

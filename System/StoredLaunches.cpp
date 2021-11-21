@@ -51,3 +51,7 @@ LaunchIterator StoredLaunches::begin() {
 LaunchIterator StoredLaunches::end() {
     return LaunchIterator();
 }
+
+MementoNode* StoredLaunches::getHead(){
+    return head ;
+}
