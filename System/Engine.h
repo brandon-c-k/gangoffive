@@ -2,15 +2,23 @@
 #ifndef GANGOFFIVE_ENGINE_H
 #define GANGOFFIVE_ENGINE_H
 
+#include "RocketState.h"
+
 class Engine {
 public:
-    virtual void update() =0;
-    virtual void clone(Engine *) = 0;
-    int getID() ;
+    Engine();
+    ~Engine();
+    virtual Engine* clone() = 0;
+    int getID();
+    void setID(int);
 
-private:
-    // State* observerState;
+    virtual void update() = 0;
+
+protected:
+    Engine(const Engine&);
+    RocketState* observerState;
     int engineId;
+    static int counter;
 };
 
 

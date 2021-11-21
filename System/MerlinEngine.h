@@ -3,11 +3,15 @@
 #include "Rocket.h"
 #include "Engine.h"
 class MerlinEngine: public Engine{
+    MerlinEngine();
+    virtual Engine* clone();
     virtual void update();
-    virtual void clone(Engine *);
 
 private:
     Rocket* rocket;
+
+protected:
+    MerlinEngine(const MerlinEngine&);
 };
 
 
