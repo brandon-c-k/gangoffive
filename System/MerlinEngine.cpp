@@ -7,7 +7,7 @@ Engine* MerlinEngine::clone() {
 }
 
 void MerlinEngine::update() {
-    //observerState = rocket->getState();
+    observerState = rocket->getState();
 }
 
 MerlinEngine::MerlinEngine(const MerlinEngine& c) : Engine(c) {}

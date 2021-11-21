@@ -46,6 +46,7 @@ private:
     RocketState* stage;
     int fuel;
     int altitude ;
+protected:
     vector<Engine*> engineList;
 };
 

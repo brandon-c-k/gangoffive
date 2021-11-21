@@ -1,7 +1,22 @@
 #include "Falcon9.h"
 #include "RocketState.h"
+#include "MerlinEngine.h"
+#include "VacuumEngine.h"
 
-Falcon9::Falcon9(int fuel) : Rocket(fuel) {}
+Falcon9::Falcon9(int fuel) : Rocket(fuel) {
+    //Add Single vacuum engine to rocket
+    VacuumEngine* eVacuum = new VacuumEngine();
+    engineList.push_back(eVacuum->clone());
+
+    //Add 9 Merlin engines to rocket
+    MerlinEngine* eMirlin = new MerlinEngine();
+        for (int i = 0 ; i < 9 ; i++)
+            engineList.push_back(eMirlin->clone());
+
+    //delete local stack variables after use
+    delete eMirlin;
+    delete eVacuum;
+}
 
 Falcon9::~Falcon9() {} 
 
@@ -60,6 +75,16 @@ void Falcon9::dock(ISS* spaceStation) {
 }
 
 Falcon9::Falcon9() {
+    //Add Single vacuum engine to rocket
+    VacuumEngine* eVacuum = new VacuumEngine();
+    engineList.push_back(eVacuum->clone());
+    
+    //Add 9 Merlin engines to rocket
+    MerlinEngine* eMirlin = new MerlinEngine();
+        for (int i = 0 ; i < 9 ; i++)
+            engineList.push_back(eMirlin->clone());
 
+    //delete local stack variables after use
+    delete eMirlin;
+    delete eVacuum;
 }
-
