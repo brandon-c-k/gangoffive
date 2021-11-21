@@ -9,7 +9,7 @@ Engine* VacuumEngine::clone() {
 }
 
 void VacuumEngine::update() {
-observerState = rocket->getState();
+    observerState = rocket->getState();
 }
 
 VacuumEngine::VacuumEngine(const VacuumEngine& c) : Engine(c) {}

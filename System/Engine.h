@@ -2,7 +2,7 @@
 #ifndef GANGOFFIVE_ENGINE_H
 #define GANGOFFIVE_ENGINE_H
 
-class RocketState;25
+class RocketState;
 
 class Engine {
 public:

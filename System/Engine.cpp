@@ -8,7 +8,7 @@ Engine::Engine(){
 }
 
 Engine::~Engine(){
-    delete observerState;
+
 }
 
 int Engine::getID() {

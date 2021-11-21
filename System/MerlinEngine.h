@@ -3,6 +3,7 @@
 #include "Rocket.h"
 #include "Engine.h"
 class MerlinEngine: public Engine{
+public:    
     MerlinEngine();
     virtual Engine* clone();
     virtual void update();
