@@ -5,10 +5,18 @@
 
 class MementoNode {
 public:
-MementoNode(Memento*);
-Memento* memento;
-MementoNode* next;
-MementoNode* previous;
+    MementoNode(Memento*);
+    ~MementoNode();
+    MementoNode* getNext();
+    void setNext(MementoNode*);
+    MementoNode* getPrevious();
+    void setPrevious(MementoNode*);
+    Memento* getMemento();
+
+private:
+    Memento* memento;
+    MementoNode* next;
+    MementoNode* previous;
 };
 
 

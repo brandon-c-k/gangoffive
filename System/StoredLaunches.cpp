@@ -6,17 +6,15 @@ StoredLaunches::StoredLaunches(){
 
 void StoredLaunches::storeLaunch(Memento* m){
     MementoNode* node = new MementoNode(m);
-    node->next = nullptr;
+    node->setNext(nullptr);
     if(isEmpty() == false){
        //insert new MemNode at the end of list
         MementoNode* last = getLastNode(); 
-        last->next = node;
-        node->previous = last;
-    }
-
-    else{
+        last->setNext(node);
+        node->setPrevious(last);
+    } else {
         //Make new MemNode as head of list if no head
-        node->previous = nullptr;
+        node->setPrevious(nullptr);
         head = node;
     }
     
@@ -24,7 +22,7 @@ void StoredLaunches::storeLaunch(Memento* m){
 
 // Returns last memento stored in the LL
 Memento* StoredLaunches::retrieveLaunch(){
-    return getLastNode()->memento;
+    return getLastNode()->getMemento();
 }
 
 bool StoredLaunches::isEmpty(){
@@ -38,9 +36,9 @@ MementoNode* StoredLaunches::getLastNode(){
 
     MementoNode* last = head;
     // find last node in LL
-    while (last->next != nullptr)
+    while (last->getNext() != nullptr)
     {
-        last = last->next; 
+        last = last->getNext();
     }
     return last;
     

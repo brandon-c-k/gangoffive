@@ -3,7 +3,10 @@
 
 
 class LaunchSimulator {
-
+public:
+    LaunchSimulator();
+    ~LaunchSimulator();
+    void optimizeLaunches(int, int, int);
 };
 
 
