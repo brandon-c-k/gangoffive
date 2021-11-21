@@ -1,12 +1,13 @@
 #include "MerlinEngine.h"
 
+MerlinEngine::MerlinEngine() : Engine(){}
+
 Engine* MerlinEngine::clone() {
-
-    Engine* e = new MerlinEngine();
-    return e ;
-
+    return new MerlinEngine(*this);
 }
 
 void MerlinEngine::update() {
-
+    observerState = rocket->getState();
 }
+
+MerlinEngine::MerlinEngine(const MerlinEngine& c) : Engine(c) {}
