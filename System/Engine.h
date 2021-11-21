@@ -2,7 +2,7 @@
 #ifndef GANGOFFIVE_ENGINE_H
 #define GANGOFFIVE_ENGINE_H
 
-#include "RocketState.h"
+class RocketState;25
 
 class Engine {
 public:

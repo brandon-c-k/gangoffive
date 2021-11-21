@@ -1,5 +1,5 @@
 #include "LaunchIterator.h"
-
+#include "StoredLaunches.h"
 LaunchIterator::LaunchIterator(StoredLaunches *launches, MementoNode *node) {
     head = launches->getHead() ;
     current = node ;
