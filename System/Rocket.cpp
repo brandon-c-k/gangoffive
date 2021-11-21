@@ -4,6 +4,7 @@
 Rocket::Rocket(int f) {
     this->stage = new StaticFire();
     this->fuel = f ;
+    this->altitude = 0 ;
 }
 
 Rocket::~Rocket() {
@@ -17,6 +18,22 @@ void Rocket::resetStage() {
 
 RocketState *Rocket::getState() {
     return this->stage;
+}
+
+void Rocket::setFuel(int f){
+    fuel = f ;
+}
+
+void Rocket::resetAltitude(){
+    altitude = 0 ;
+}
+
+int Rocket::getFuel(){
+    return fuel ;
+}
+
+int Rocket::getAltitude(){
+    return altitude ;
 }
 
 void Rocket::setState(RocketState *state) {
@@ -71,4 +88,21 @@ Rocket::Rocket() {
 
 DragonSpacecraft *Rocket::getSpacecraft() {
     return spacecraft;
+}
+
+void Rocket::reverseState(){
+
+    RocketState* newState = new StaticFire() ;
+    stage = newState ;
+    
+}
+
+Memento* createMemento() {
+    return new Memento(altitude, fuel, engineList, stage);
+}
+
+void restoreRocket(Memento* mem){
+    altitude = mem->getAltitude() ;
+    fuel = mem->getFuel() ;
+    engineList = mem->getEngineList() ;
 }

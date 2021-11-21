@@ -20,27 +20,31 @@ public:
     void resetStage();
     RocketState* getState();
     void setState(RocketState *state);
+    void setFuel(int ) ;
+    void resetAltitude() ;
+    int getAltitude() ;
+    int getFuel() ;
     void change();
     std::string getStage();
     virtual void staticFire() = 0;
     virtual void launch()= 0;
     virtual void firstStage() = 0;
     virtual void abort() = 0;
-    virtual void reverseState() = 0;
+    void reverseState();
     virtual void success() = 0;
     virtual void dock(ISS*) = 0;
-    virtual void pause() = 0;
     void addSpacecraft(DragonSpacecraft*) ;
     void notifyEngines();
     void addEngine(Engine *);
     void removeEngine(Engine *);
     DragonSpacecraft* getSpacecraft();
+    Memento* createMemento() ;
+    void restoreRocket(Memento*) ;
 private:
     DragonSpacecraft* spacecraft ;
     RocketState* stage;
     int fuel;
-    int x_coords;
-    int y_coords;
+    int altitude ;
     vector<Engine*> engineList;
 };
 

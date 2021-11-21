@@ -1,6 +1,9 @@
 #include "MerlinEngine.h"
 
-void MerlinEngine::clone(Engine *) {
+Engine* MerlinEngine::clone() {
+
+    Engine* e = new MerlinEngine();
+    return e ;
 
 }
 

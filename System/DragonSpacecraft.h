@@ -8,10 +8,13 @@ class DragonSpacecraft {
         int getCargo() ;
         bool getDockStatus() ;
         void setDockStatus(bool) ;
+        virtual getCrew() = 0 ;
+        bool hasCrew() ;
 
     private:
         int cargo ;
         bool dockStatus ;
+        bool crewShip = false ;
 };
 
 

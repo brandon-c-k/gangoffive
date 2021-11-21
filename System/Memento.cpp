@@ -1,8 +1,35 @@
 #include "Memento.h"
 
-void Memento::setState(RocketState* s){
-    this->state = s;
+Memento::Memento(int a, int f, DragonSpacecraft* s, vector<Engine*>, e, RocketState* st){
+    altitude = a ;
+    fuel = f ;
+    spacecraft = s ;
+    engineList = e ;
+    stage = st ;
 }
-RocketState* Memento::getState(){
-    return this->state;
+
+Memento::~Memento(){
+    delete spacecraft ;
+
+    //delete engines
+}
+
+int Memento::getAltitude(){
+    return altitude ;
+}
+
+int Memento::getFuel(){
+    return fuel ;
+}
+
+DragonSpacecraft* Memento::getSpacecraft(){
+    return spacecraft ;
+}
+
+RocketState* Memento::getStage(){
+    return stage ;
+}
+
+vector<Engine*> Memento::getEngineList(){
+    return engineList ;
 }

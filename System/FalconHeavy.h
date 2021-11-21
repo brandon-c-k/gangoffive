@@ -11,7 +11,6 @@ public:
     virtual void launch();
     virtual void firstStage();
     virtual void abort();
-    virtual void pause();
     virtual void success();
     virtual void dock(ISS*);
     virtual ~FalconHeavy();

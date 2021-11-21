@@ -4,13 +4,20 @@
 #include "RocketState.h"
 class Memento {
 private:
-    RocketState* state;
+    int altitude ;
+    int fuel ;
+    DragonSpacecraft* spacecraft ;
+    vector<Engine*> engineList;
+    RocketState* stage ;
 
 public:
-    void setState(RocketState* );
-    RocketState* getState();
-
-
+    Memento(int a, int f, DragonSpacecraft* s, vector<Engine*>, e, RocketState* st);
+    ~Memento() ;
+    int getAltitude() ;
+    int getfuel() ;
+    DragonSpacecraft* getSpacecraft() ;
+    RocketState* getStage() ;
+    vector<Engine*> getEngineList() ;
 
 };
 

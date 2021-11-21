@@ -4,7 +4,7 @@
 #include "Engine.h"
 class MerlinEngine: public Engine{
     virtual void update();
-    virtual void clone(Engine *);
+    virtual Engine* clone();
 
 private:
     Rocket* rocket;

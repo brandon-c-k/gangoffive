@@ -16,3 +16,7 @@ bool DragonSpacecraft::getDockStatus(){
 void DragonSpacecraft::setDockStatus(bool d){
     dockStatus = d ;
 }
+
+bool DragonSpacecraft::hasCrew(){
+    return crewShip; 
+}
