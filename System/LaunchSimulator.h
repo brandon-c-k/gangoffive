@@ -21,16 +21,19 @@ public:
 
 private:
     StoredLaunches* launchList ;
-    string runStaticFire(Rocket*) ;
-    string runLaunch(Rocket*) ;
-    string runFirstStage(Rocket*) ;
-    string runDock(Rocket*) ;
+    void runStaticFire(Rocket*) ;
+    void runLaunch(Rocket*) ;
+    void runFirstStage(Rocket*) ;
+    void runDock(Rocket*) ;
     Rocket* changeConfig(Rocket*) ;
     Command* launch ;
     Command* firstStage ;
     Command* dock ;
     Command* reverse ;
     Command* success ;
+    Command* staticFire;
+    ISS* iss;
+    DockingStation* dockingPlatform;
 };
 
 

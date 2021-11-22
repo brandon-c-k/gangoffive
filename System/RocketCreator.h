@@ -5,9 +5,7 @@
 
 class RocketCreator {
 public:
-    virtual Rocket* createFalconHeavy(int) = 0;
-
-    virtual Rocket* createFalcon9(int) = 0;
+    virtual Rocket* createRocket(bool, int a = 0) = 0;
 
     virtual ~RocketCreator(){}
 

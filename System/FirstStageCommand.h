@@ -4,6 +4,7 @@
 #include "Command.h"
 
 class FirstStageCommand: public Command {
+public:
     FirstStageCommand(Rocket*) ;
     virtual void execute() ;
     virtual void undo() ;

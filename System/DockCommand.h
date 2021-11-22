@@ -4,10 +4,13 @@
 #include "Command.h"
 
 class DockCommand: public Command{
-    DockCommand(Rocket*) ;
+public:
+    DockCommand(Rocket*, ISS*) ;
     virtual void execute() ;
     virtual void undo() ;
 
+private:
+    ISS* iss;
 };
 
 

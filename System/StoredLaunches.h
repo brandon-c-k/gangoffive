@@ -13,11 +13,11 @@ private:
 
 public:
     StoredLaunches();
-    void storeLaunch(Memento*);
-    Memento* retrieveLaunch();
+    void storeLaunch(Rocket*);
+    Rocket* retrieveLaunch();
     bool isEmpty();
-    LaunchIterator begin();
-    LaunchIterator end();
+    LaunchIterator* begin();
+    LaunchIterator* end();
     RocketNode* getLastNode();
     RocketNode* getHead() ;
 };

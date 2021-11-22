@@ -1,10 +1,12 @@
 #include "DockCommand.h"
 
 
-DockCommand::DockCommand(Rocket* r):Command{r} {}
+DockCommand::DockCommand(Rocket* r, ISS* i):Command{r} {
+    iss = i;
+}
 
 void DockCommand::execute(){
-    receiver->dock() ;
+    receiver->dock(iss) ;
 }
 
 void DockCommand::undo(){

@@ -4,7 +4,7 @@
 #include "Command.h"
 
 class LaunchCommand: public Command{
-
+public:
     LaunchCommand(Rocket*) ;
     virtual void execute() ;
     virtual void undo() ;

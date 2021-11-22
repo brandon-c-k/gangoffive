@@ -13,6 +13,12 @@ public:
     virtual void abort();
     virtual void success();
     virtual void dock(ISS*);
+    virtual string getType();
+    void setSatellites(bool);
+    bool getSatellites();
+
+private:
+    bool satellites;
 };
 
 

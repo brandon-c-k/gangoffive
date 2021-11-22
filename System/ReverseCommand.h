@@ -4,6 +4,7 @@
 #include "Command.h"
 
 class ReverseCommand: public Command{
+public:
     ReverseCommand(Rocket*) ;
     virtual void execute() ;
     virtual void undo() ;

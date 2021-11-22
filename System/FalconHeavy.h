@@ -14,7 +14,7 @@ public:
     virtual void success();
     virtual void dock(ISS*);
     virtual ~FalconHeavy();
-    virtual void reverseState();
+    virtual string getType();
 };
 
 

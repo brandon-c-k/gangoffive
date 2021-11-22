@@ -3,14 +3,11 @@
 DragonSpacecraft::DragonSpacecraft(int c){
     dockStatus = false ;
     cargo = c ;
+    crewShip = false;
 }
 
 int DragonSpacecraft::getCargo(){
     return cargo ;
-}
-
-int DragonSpacecraft::setCargo(int c){
-    cargo = c ;
 }
 
 bool DragonSpacecraft::getDockStatus(){
@@ -31,4 +28,12 @@ void DragonSpacecraft::setCrewShip(bool c) {
 
 DragonSpacecraft::~DragonSpacecraft() {
 
+}
+
+void DragonSpacecraft::setCargo(int cargo) {
+    this->cargo = cargo;
+}
+
+std::string DragonSpacecraft::getName() {
+    return "Dragon";
 }

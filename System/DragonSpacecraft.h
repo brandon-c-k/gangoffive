@@ -1,10 +1,10 @@
 #ifndef GANGOFFIVE_DRAGONSPACECRAFT_H
 #define GANGOFFIVE_DRAGONSPACECRAFT_H
-
+#include <string>
 
 class DragonSpacecraft {
     public:
-        DragonSpacecraft(int c);
+        DragonSpacecraft(int c = 0);
         int getCargo() ;
         void setCargo(int) ;
         bool getDockStatus() ;
@@ -12,6 +12,7 @@ class DragonSpacecraft {
         bool hasCrew() ;
         void setCrewShip(bool);
         virtual ~DragonSpacecraft();
+        virtual std::string getName();
 
     private:
         int cargo ;

@@ -7,7 +7,7 @@
 
 class FalconHeavyCreator: public RocketCreator{
 public:
-    Rocket* createFalconHeavy(int); 
+    virtual Rocket* createRocket(bool, int);
 };
 
 

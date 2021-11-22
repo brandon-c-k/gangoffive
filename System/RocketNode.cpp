@@ -24,7 +24,7 @@ void RocketNode::setPrevious(RocketNode * m) {
 }
 
 Rocket *RocketNode::getRocket() {
-    return Rocket;
+    return rocket;
 }
 
 void RocketNode::setRocket(Rocket* r){

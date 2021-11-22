@@ -1,15 +1,15 @@
 #include "StoredLaunches.h"
-
+#include "MementoNode.h"
 StoredLaunches::StoredLaunches(){
     head = nullptr;
 }
 
-void StoredLaunches::storeLaunch(Memento* m){
-    MementoNode* node = new MementoNode(m);
+void StoredLaunches::storeLaunch(Rocket* r){
+    RocketNode* node = new RocketNode(r);
     node->setNext(nullptr);
     if(isEmpty() == false){
        //insert new MemNode at the end of list
-        MementoNode* last = getLastNode(); 
+        RocketNode* last = getLastNode();
         last->setNext(node);
         node->setPrevious(last);
     } else {
@@ -21,8 +21,8 @@ void StoredLaunches::storeLaunch(Memento* m){
 }
 
 // Returns last memento stored in the LL
-Memento* StoredLaunches::retrieveLaunch(){
-    return getLastNode()->getMemento();
+Rocket* StoredLaunches::retrieveLaunch(){
+    return getLastNode()->getRocket();
 }
 
 bool StoredLaunches::isEmpty(){
@@ -32,9 +32,9 @@ bool StoredLaunches::isEmpty(){
         return false;
 }
 
-MementoNode* StoredLaunches::getLastNode(){
+RocketNode* StoredLaunches::getLastNode(){
 
-    MementoNode* last = head;
+    RocketNode* last = head;
     // find last node in LL
     while (last->getNext() != nullptr)
     {
@@ -44,14 +44,14 @@ MementoNode* StoredLaunches::getLastNode(){
     
 }
 
-LaunchIterator StoredLaunches::begin() {
-    return LaunchIterator();
+LaunchIterator* StoredLaunches::begin() {
+    return new LaunchIterator();
 }
 
-LaunchIterator StoredLaunches::end() {
-    return LaunchIterator();
+LaunchIterator* StoredLaunches::end() {
+    return new LaunchIterator();
 }
 
-MementoNode* StoredLaunches::getHead(){
+RocketNode* StoredLaunches::getHead(){
     return head ;
 }

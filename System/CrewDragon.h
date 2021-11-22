@@ -5,10 +5,10 @@
 
 class CrewDragon:  public DragonSpacecraft{
     public:
-        CrewDragon(int crewAmount, int cargoAmount);
+        CrewDragon(int crewAmount, int cargoAmount = 0);
         int getCrew() ;
-        void setCrew(int )
-
+        void setCrew(int );
+        virtual std::string getName();
     private:
         int crew ;
 };

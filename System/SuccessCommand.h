@@ -4,6 +4,7 @@
 #include "Command.h"
 
 class SuccessCommand: public Command{
+public:
     SuccessCommand(Rocket*) ;
     virtual void execute() ;
     virtual void undo() ;

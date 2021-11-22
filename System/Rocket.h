@@ -8,9 +8,9 @@
 #include "Engine.h"
 #include "ISS.h"
 #include "DragonSpacecraft.h"
-#include "Memento.h"
-using namespace std;
 
+using namespace std;
+class Memento;
 class RocketState; //Forward declaration because of circular dependency in state pattern
 
 class Rocket {
@@ -34,6 +34,7 @@ public:
     void reverseState();
     virtual void success() = 0;
     virtual void dock(ISS*) = 0;
+    virtual string getType() = 0;
     void addSpacecraft(DragonSpacecraft*) ;
     void notifyEngines();
     void addEngine(Engine *);
@@ -41,12 +42,16 @@ public:
     DragonSpacecraft* getSpacecraft();
     Memento* createMemento() ;
     void restoreRocket(Memento*) ;
+    void setCargoMax(int);
+    int getCargoMax();
+    void setAltitude(int);
 private:
     DragonSpacecraft* spacecraft ;
     RocketState* stage;
     int fuel;
     int altitude ;
     vector<Engine*> engineList;
+    int cargoMax;
 };
 
 #endif //GANGOFFIVE_ROCKET_H

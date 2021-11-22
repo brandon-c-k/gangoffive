@@ -1,6 +1,7 @@
 
 #include "Rocket.h"
 #include "StaticFire.h"
+#include "Memento.h"
 Rocket::Rocket(int f) {
     this->stage = new StaticFire();
     this->fuel = f ;
@@ -106,4 +107,16 @@ void Rocket::restoreRocket(Memento* mem){
     altitude = mem->getAltitude() ;
     fuel = mem->getFuel() ;
     engineList = mem->getEngineList() ;
+}
+
+int Rocket::getCargoMax() {
+    return cargoMax;
+}
+
+void Rocket::setCargoMax(int cap) {
+    cargoMax = cap;
+}
+
+void Rocket::setAltitude(int alt) {
+    this->altitude = alt;
 }
