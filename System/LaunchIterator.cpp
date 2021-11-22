@@ -25,5 +25,11 @@ MementoNode* LaunchIterator::currentItem(){
 MementoNode* LaunchIterator::next(){
     if(current->getNext() != NULL)
         current = current->getNext() ;
+    else current = NULL ;
+    
     return current ;
+}
+
+bool LaunchIterator::isDone(){
+    return (current == NULL) ;
 }

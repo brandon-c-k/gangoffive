@@ -3,6 +3,7 @@
 #include <vector>
 #include "DragonSpacecraft.h"
 #include "Engine.h"
+#include "Rocket.h"
 class RocketState;
 class Memento {
 private:

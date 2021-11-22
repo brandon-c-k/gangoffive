@@ -1,7 +1,7 @@
 #ifndef GANGOFFIVE_STOREDLAUNCHES_H
 #define GANGOFFIVE_STOREDLAUNCHES_H
 
-#include "MementoNode.h"
+#include "RocketNode.h"
 #include "LaunchIterator.h"
 #include <vector>
 #include <iostream>
@@ -9,7 +9,7 @@
 
 class StoredLaunches {
 private:
-    MementoNode* head;
+    RocketNode* head;
 
 public:
     StoredLaunches();
@@ -18,8 +18,8 @@ public:
     bool isEmpty();
     LaunchIterator begin();
     LaunchIterator end();
-    MementoNode* getLastNode();
-    MementoNode* getHead() ;
+    RocketNode* getLastNode();
+    RocketNode* getHead() ;
 };
 
 

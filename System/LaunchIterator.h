@@ -1,19 +1,20 @@
 #ifndef GANGOFFIVE_LAUNCHITERATOR_H
 #define GANGOFFIVE_LAUNCHITERATOR_H
 
-#include "MementoNode.h"
+#include "RocketNode.h"
 class StoredLaunches;
 class LaunchIterator {
 public:
     LaunchIterator();
-    LaunchIterator(StoredLaunches*, MementoNode* );
+    LaunchIterator(StoredLaunches*, RocketNode* );
     ~LaunchIterator();
-    MementoNode* first() ;
-    MementoNode* next() ;
-    MementoNode* currentItem() ;
+    RocketNode* first() ;
+    RocketNode* next() ;
+    RocketNode* currentItem() ;
+    bool isDone() ;
 protected:
-    MementoNode* head;
-    MementoNode* current;
+    RocketNode* head;
+    RocketNode* current;
 };
 
 
