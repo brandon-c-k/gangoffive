@@ -1,6 +1,6 @@
 #include "LaunchIterator.h"
 #include "StoredLaunches.h"
-LaunchIterator::LaunchIterator(StoredLaunches *launches, MementoNode *node) {
+LaunchIterator::LaunchIterator(StoredLaunches *launches, RocketNode *node) {
     head = launches->getHead() ;
     current = node ;
 }
@@ -14,19 +14,19 @@ LaunchIterator::~LaunchIterator() {
 
 }
 
-MementoNode* LaunchIterator::first(){
+RocketNode* LaunchIterator::first(){
     return head ;
 }
 
-MementoNode* LaunchIterator::currentItem(){
+RocketNode* LaunchIterator::currentItem(){
     return current ;
 }
 
-MementoNode* LaunchIterator::next(){
+RocketNode* LaunchIterator::next(){
     if(current->getNext() != NULL)
         current = current->getNext() ;
     else current = NULL ;
-    
+
     return current ;
 }
 
