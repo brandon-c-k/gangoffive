@@ -3,8 +3,6 @@
 #include "StaticFire.h"
 #include "Memento.h"
 
-int Rocket::engineCount = 0;
-
 Rocket::Rocket(int f) {
     this->stage = new StaticFire();
     this->fuel = f ;

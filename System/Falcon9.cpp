@@ -3,6 +3,7 @@
 #include "MerlinEngine.h"
 #include "VacuumEngine.h"
 
+
 Falcon9::Falcon9(int fuel) : Rocket(fuel) {
     setCargoMax(22800);
     //Add Single vacuum engine to rocket
@@ -117,4 +118,5 @@ bool Falcon9::getSatellites() {
 string Falcon9::getType() {
     return "Falcon 9";
 }
+
 
