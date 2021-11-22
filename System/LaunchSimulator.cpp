@@ -142,8 +142,8 @@ void LaunchSimulator::actualLaunch(){
         launch->execute() ;
         firstStage->execute() ;
         dock->execute() ;
-        reverse->execute() ;
         success->execute() ;
+        reverse->execute() ;
 
         iterator->next() ;
     } 
