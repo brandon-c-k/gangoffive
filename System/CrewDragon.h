@@ -7,6 +7,7 @@ class CrewDragon:  public DragonSpacecraft{
     public:
         CrewDragon(int crewAmount, int cargoAmount);
         int getCrew() ;
+        void setCrew(int )
 
     private:
         int crew ;

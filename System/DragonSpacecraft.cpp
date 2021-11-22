@@ -9,6 +9,10 @@ int DragonSpacecraft::getCargo(){
     return cargo ;
 }
 
+int DragonSpacecraft::setCargo(int c){
+    cargo = c ;
+}
+
 bool DragonSpacecraft::getDockStatus(){
     return dockStatus ;
 }

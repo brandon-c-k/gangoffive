@@ -53,6 +53,7 @@ bool LaunchSimulator::testMode(){
         success = new SuccessCommand(rocket) ;
 
         mem = rocket->createMemento() ;
+        reverse->execute() ;
         runStaticFire(rocket) ;
 
         cout << "Save changes made during test mode? Y/N " << endl ;
@@ -78,7 +79,7 @@ void LaunchSimulator::runStaticFire(Rocket* rocket){
         staticFire->execute() ;
         runLaunch(rocket) ;
     }else{
-        rocket = changeConfig() ;
+        rocket = changeConfig(rocket) ;
         runStaticFire(rocket) ;
     }
 }
@@ -126,6 +127,54 @@ void LaunchSimulator::runDock(Rocket* rocket){
     }else{
         reverse->execute() ;
         runStaticFire(rocket) ;
+    }
+
+}
+
+Rocket* LaunchSimulator::changeConfig(Rocket* r){
+    string answer ;
+    int value ;
+
+    //ADD CARGO?
+    cout << "Would you like to add cargo? Y/N" << endl ;
+    cin >> answer ;
+
+    if(answer == "Y" || answer == "y"){
+        //add cargo
+        cout << "Enter weight of cargo to add: " << endl ;
+        cin >> value ;
+        int newCargo = r->getSpacecraft()->getCargo() + value ;
+        if(newCargo > r->getCargoMax())
+            cout << "Too much cargo for your rockets capacity" << endl ;
+        else{
+            r->getSpacecraft()->setCargo(newCargo) ;
+        }
+    }
+
+    //ADD CREW?
+    cout << "Would you like to add crew? Y/N" << endl ;
+    cin >> answer ;
+
+    if(answer == "Y" || answer == "y"){
+        if(r->getSpacecraft()->hasCrew()){
+            //add crew
+            cout << "Enter number of crew to add: " << endl ;
+            cin >> value ;
+            int newCrew = r->getSpacecraft()->getCrew() + value ;
+            r->getSpacecraft()->setCrew(newCrew) ;
+        }else cout << "Dragon Space craft cannot carry crew" << endl ;
+    }
+
+    //ADD FUEL?
+    cout << "Would you like to add fuel? Y/N" << endl ;
+    cin >> answer ;
+
+    if(answer == "Y" || answer == "y"){
+        //add fuel
+        cout << "Enter amount of fuel to add: " << endl ;
+        cin >> value ;
+        int newFuel = r->getFuel() + value ;
+        r->setFuel(newFuel) ;
     }
 
 }

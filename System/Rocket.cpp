@@ -92,6 +92,7 @@ DragonSpacecraft *Rocket::getSpacecraft() {
 
 void Rocket::reverseState(){
 
+    altitude = 0 ;
     RocketState* newState = new StaticFire() ;
     stage = newState ;
     

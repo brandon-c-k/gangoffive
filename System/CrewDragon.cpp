@@ -8,3 +8,7 @@ CrewDragon::CrewDragon(int cargoAmount, int crewAmount) : DragonSpacecraft{cargo
 int CrewDragon::getCrew() {
     return crew;
 }
+
+void CrewDragon::setCrew(int c){
+    crew = c ;
+}

@@ -6,6 +6,7 @@ class DragonSpacecraft {
     public:
         DragonSpacecraft(int c);
         int getCargo() ;
+        void setCargo(int) ;
         bool getDockStatus() ;
         void setDockStatus(bool) ;
         bool hasCrew() ;
