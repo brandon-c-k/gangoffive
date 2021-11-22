@@ -5,10 +5,15 @@
 #include "Rocket.h"
 class VacuumEngine: public Engine{
 public:
+    VacuumEngine();
+    virtual Engine* clone();
     virtual void update();
-    virtual void clone(Engine *);
+
 private:
     Rocket* rocket;
+
+protected:
+    VacuumEngine(const VacuumEngine&);
 };
 
 
