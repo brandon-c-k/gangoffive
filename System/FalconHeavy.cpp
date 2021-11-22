@@ -27,6 +27,7 @@ void FalconHeavy::staticFire() {
     notifyEngines() ;
     getState()->handleChange(this) ;
     cout << "Falcon Heavy passes static fire test - engines firing as needed" << endl ;
+    setFuel((int) getFuel()*0.95);
     cout << "Altitude: " << getAltitude() << " km" << endl ;
     cout << "Fuel remaining: " << getFuel() << " litres" << endl ;
 
@@ -38,8 +39,8 @@ void FalconHeavy::launch() {
         getState()->handleChange(this) ;                 //changes state to LiftOff
         cout << "Blast off! The Falcon Heavy rocket has launched.  Merlin Engines are firing" << endl ;
 
-        setAltitude(getAltitude() + 30);
-        //decrease fuel
+        setAltitude(getAltitude() + 3000);
+        setFuel((int) getFuel()*0.80);
 
         cout << "Altitude: " << getAltitude() << " km" << endl ;
         cout << "Fuel remaining: " << getFuel() << " litres" << endl ;
@@ -56,8 +57,8 @@ void FalconHeavy::firstStage() {
         cout << "Falcon Heavy rocket detaches its first stage - which lands on a drone ship in the ocean" << endl ;
         cout << "Second stage ignition. Vacuum Engine firing." << endl ;
 
-        setAltitude(getAltitude() + 30);
-        //decrease fuel
+        setAltitude(getAltitude() + 3000);
+        setFuel((int) getFuel()*0.90);
 
         cout << "Altitude: " << getAltitude() << " km" << endl ;
         cout << "Fuel remaining: " << getFuel() << " litres" << endl ;
@@ -89,8 +90,8 @@ void FalconHeavy::success() {
 void FalconHeavy::dock(ISS* spaceStation) {
     if(getState()->getStage() == "First Stage Released"){
         cout<<"Falcon Heavy rocket is approaching the ISS." << endl ;
-        setAltitude(getAltitude() + 30);
-        //decrease fuel
+        setAltitude(getAltitude() + 3000);
+        setFuel((int) getFuel()*0.90);
 
         cout << "Altitude: " << getAltitude() << " km" << endl ;
         cout << "Fuel remaining: " << getFuel() << " litres" << endl ;

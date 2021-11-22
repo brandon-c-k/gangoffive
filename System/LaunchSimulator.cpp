@@ -141,8 +141,10 @@ void LaunchSimulator::actualLaunch(){
         staticFire->execute() ;
         launch->execute() ;
         firstStage->execute() ;
-        dock->execute() ;
-        success->execute() ;
+        if (rocket->getStage() != "Re-entry"){
+            dock->execute() ;
+            success->execute() ;
+        }
         reverse->execute() ;
 
         iterator->next() ;
@@ -229,7 +231,9 @@ void LaunchSimulator::runFirstStage(Rocket* rocket){
 
     if(answer == "1"){
         firstStage->execute() ;
-        runDock(rocket) ;
+        if (rocket->getStage() != "Re-entry"){
+            runDock(rocket) ;
+        }
     }else{
         reverse->execute() ;
         runStaticFire(rocket) ;

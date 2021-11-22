@@ -1,5 +1,5 @@
 #include "Falcon9.h"
-#include "RocketState.h"
+#include "Reentry.h"
 #include "MerlinEngine.h"
 #include "VacuumEngine.h"
 
@@ -27,6 +27,8 @@ void Falcon9::staticFire() {
 
     getState()->handleChange(this) ;
     cout << "Falcon 9 passes static fire test - engines firing as needed" << endl ;
+
+    setFuel((int) getFuel()*0.95);
     cout << "Altitude: " << getAltitude() << " km" << endl ;
     cout << "Fuel remaining: " << getFuel() << " litres" << endl ;
 
@@ -36,8 +38,8 @@ void Falcon9::launch() {
     if(getState()->getStage() == "On Launch Pad"){
         getState()->handleChange(this) ;                 //changes state to LiftOff
         cout << "Blast off! The Falcon 9 rocket has launched. Merlin Engines are firing" << endl ;
-        setAltitude(getAltitude() + 30);
-        //decrease fuel
+        setAltitude(getAltitude() + 3000);
+        setFuel((int) getFuel()*0.80);
 
         cout << "Altitude: " << getAltitude() << " km" << endl ;
         cout << "Fuel remaining: " << getFuel() << " litres" << endl ;
@@ -53,12 +55,16 @@ void Falcon9::firstStage() {
         getState()->handleChange(this) ;                //changes state to FirstStageDone
         cout << "Falcon 9 rocket detaches its first stage - which lands on a drone ship in the ocean" << endl ;
         cout << "Second stage ignition. Vacuum Engine firing." << endl ;
-        setAltitude(getAltitude() + 30);
-        //decrease fuel
+        setAltitude(getAltitude() + 3000);
+        setFuel((int) getFuel()*0.90);
 
         cout << "Altitude: " << getAltitude() << " km" << endl ;
         cout << "Fuel remaining: " << getFuel() << " litres" << endl ;
         notifyEngines() ;
+        if (getSatellites()){
+            cout << "Falcon 9 releases it's satellites."<< endl;
+            this->setState(new Reentry());
+        }
     } else{
         cout << "Falcon 9 rocket needs to be in lift off to detach its first getState(). Current state: " << getState()->getStage() << endl ;
     }
@@ -82,8 +88,8 @@ void Falcon9::success() {
 void Falcon9::dock(ISS* spaceStation) {
     if(getState()->getStage() == "First Stage Released"){
         cout<<"Falcon 9 rocket is approaching the ISS." << endl ;
-        setAltitude(getAltitude() + 30);
-        //decrease fuel
+        setAltitude(getAltitude() + 3000);
+        setFuel((int) getFuel()*0.90);
 
         cout << "Altitude: " << getAltitude() << " km" << endl ;
         cout << "Fuel remaining: " << getFuel() << " litres" << endl ;
