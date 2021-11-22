@@ -7,7 +7,7 @@ StoredLaunches::StoredLaunches(){
 void StoredLaunches::storeLaunch(Rocket* r){
     RocketNode* node = new RocketNode(r);
     node->setNext(nullptr);
-    if(isEmpty() == false){
+    if(!isEmpty()){
        //insert new MemNode at the end of list
         RocketNode* last = getLastNode();
         last->setNext(node);

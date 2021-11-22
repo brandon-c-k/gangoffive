@@ -1,19 +1,35 @@
 #include "FalconHeavy.h"
 #include "RocketState.h"
 #include "CrewDragon.h"
+#include "MerlinEngine.h"
+#include "VacuumEngine.h"
+
 FalconHeavy::FalconHeavy(int fuel) : Rocket(fuel) {
     setCargoMax(63800);
+    //Add Single vacuum engine to rocket
+    VacuumEngine* eVacuum = new VacuumEngine();
+    addEngine(eVacuum->clone());
+
+    //Add 9 Merlin engines to rocket
+    MerlinEngine* eMirlin = new MerlinEngine();
+    for (int i = 0 ; i < 27 ; i ++ )
+        addEngine(eMirlin->clone());
+
+    //delete local stack variables after use
+    delete eMirlin;
+    delete eVacuum;
+
 }
 
 FalconHeavy::~FalconHeavy() {} 
 
 void FalconHeavy::staticFire() {
-
+    notifyEngines() ;
     getState()->handleChange(this) ;
     cout << "Falcon Heavy passes static fire test - engines firing as needed" << endl ;
     cout << "Altitude: " << getAltitude() << " km" << endl ;
     cout << "Fuel remaining: " << getFuel() << " litres" << endl ;
-    notifyEngines() ;
+
 
 }
 

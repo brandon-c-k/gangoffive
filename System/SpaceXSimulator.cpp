@@ -6,6 +6,7 @@ int main() {
     int satellites = 0;
     int crew = 0;
     int cargo = 0;
+    char c;
 
     std::cout << "Please enter the amount of satellite batches (60 per batch):" << std::endl;
     std::cin >> satellites;
@@ -20,8 +21,10 @@ int main() {
     LaunchSim->optimizeLaunches(satellites, crew, cargo);
 
     std::cout << "Ready For Test Launch, enter any character to continue:"<<endl;
-    getchar();
-    LaunchSim->testMode();
-    LaunchSim->actualLaunch();
+    cin >> c;
+    if (LaunchSim->testMode())
+    {
+        LaunchSim->actualLaunch();
+    }
 }
 

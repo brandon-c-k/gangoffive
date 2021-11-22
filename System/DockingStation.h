@@ -9,6 +9,9 @@ class DockingStation {
         DockingStation() ;
         ~DockingStation() ;
         void accept(Rocket*) ;
+
+private:
+    Rocket* dockedRocket;
 };
 
 

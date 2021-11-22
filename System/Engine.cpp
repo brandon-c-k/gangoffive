@@ -1,10 +1,8 @@
 #include "Engine.h"
-
-int Engine::counter = 0;
+#include "RocketState.h"
 
 Engine::Engine(){
-    counter++;
-    engineId = counter;
+
 }
 
 Engine::~Engine(){
@@ -21,6 +19,13 @@ void Engine::setID(int i){
 
 
 Engine::Engine(const Engine& c){
-    counter++;
-    this->engineId = counter;
+
+}
+
+void Engine::setRocket(Rocket *r) {
+    rocket = r;
+}
+
+Rocket *Engine::getRocket() {
+    return rocket;
 }

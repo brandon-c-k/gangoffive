@@ -1,19 +1,34 @@
 #include "Falcon9.h"
 #include "RocketState.h"
+#include "MerlinEngine.h"
+#include "VacuumEngine.h"
 
 Falcon9::Falcon9(int fuel) : Rocket(fuel) {
     setCargoMax(22800);
+    //Add Single vacuum engine to rocket
+    VacuumEngine* eVacuum = new VacuumEngine();
+    addEngine(eVacuum->clone());
+
+    //Add 9 Merlin engines to rocket
+    MerlinEngine* eMerlin = new MerlinEngine();
+
+    for (int i = 0 ; i < 9 ; i++)
+        addEngine(eMerlin->clone());
+
+    //delete local stack variables after use
+    delete eMerlin;
+    delete eVacuum;
 }
 
 Falcon9::~Falcon9() {} 
 
 void Falcon9::staticFire() {
+    notifyEngines() ;
 
     getState()->handleChange(this) ;
     cout << "Falcon 9 passes static fire test - engines firing as needed" << endl ;
     cout << "Altitude: " << getAltitude() << " km" << endl ;
     cout << "Fuel remaining: " << getFuel() << " litres" << endl ;
-    notifyEngines() ;
 
 }
 

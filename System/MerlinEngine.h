@@ -1,14 +1,12 @@
 #ifndef GANGOFFIVE_MERLINENGINE_H
 #define GANGOFFIVE_MERLINENGINE_H
-#include "Rocket.h"
 #include "Engine.h"
 class MerlinEngine: public Engine{
+public:
     MerlinEngine();
     virtual Engine* clone();
     virtual void update();
-
-private:
-    Rocket* rocket;
+    virtual std::string getName();
 
 protected:
     MerlinEngine(const MerlinEngine&);

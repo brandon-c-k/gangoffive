@@ -2,15 +2,12 @@
 #ifndef GANGOFFIVE_VACUUMENGINE_H
 #define GANGOFFIVE_VACUUMENGINE_H
 #include "Engine.h"
-#include "Rocket.h"
 class VacuumEngine: public Engine{
 public:
     VacuumEngine();
     virtual Engine* clone();
     virtual void update();
-
-private:
-    Rocket* rocket;
+    virtual std::string getName();
 
 protected:
     VacuumEngine(const VacuumEngine&);

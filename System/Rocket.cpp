@@ -2,6 +2,9 @@
 #include "Rocket.h"
 #include "StaticFire.h"
 #include "Memento.h"
+
+int Rocket::engineCount = 0;
+
 Rocket::Rocket(int f) {
     this->stage = new StaticFire();
     this->fuel = f ;
@@ -59,14 +62,15 @@ void Rocket::notifyEngines() {
     vector<Engine*>:: iterator it;
     for (it = engineList.begin(); it != engineList.end(); ++it){
         e = *it ;
-        cout << "Merlin engine " << e->getID() << " notified of changes." << endl ;
         e->update() ;
     }
 }
 
 void Rocket::addEngine(Engine * e) {
+    e->setID(engineCount++);
+    e->setRocket(this);
     engineList.push_back(e) ;
-    cout << "Merlin Engine " << e->getID() << " added to rocket" << endl; 
+    cout << e->getName() <<" " << e->getID() << " added to "<< this->getType() << endl;
 }
 
 void Rocket::removeEngine(Engine *) {

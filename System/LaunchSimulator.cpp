@@ -18,8 +18,8 @@ void LaunchSimulator::optimizeLaunches(int sat, int crew, int cargo ) {
     }
     while (cargo > 0) {
         Rocket* r;
-        int crewCount = 0;
-        int cargoAmount = 0;
+        int crewCount;
+        int cargoAmount;
         if (cargo >  45600){
             if (cargo >= 63800){
                 cargoAmount = 63800;
@@ -75,7 +75,7 @@ void LaunchSimulator::optimizeLaunches(int sat, int crew, int cargo ) {
     }
     while (crew > 0){
         Rocket* r;
-        int crewCount = 0;
+        int crewCount;
         if (crew >= 7) {
             crewCount = 7;
             crew -= 7;
@@ -93,15 +93,15 @@ void LaunchSimulator::optimizeLaunches(int sat, int crew, int cargo ) {
     for (auto & rocket : rockets) {
         launchList->storeLaunch(rocket);
         rocketType = rocket->getType();
-        cout<<rocketType << setw(15) <<setfill(' ');;
+        cout<<rocketType << setw(15) <<setfill(' ');
         spacecraftName = rocket->getSpacecraft()->getName();
-        cout << spacecraftName << setw(15) <<setfill(' ');;
+        cout << spacecraftName << setw(15) <<setfill(' ');
         if (spacecraftName == "Crew Dragon"){
-            cout << dynamic_cast<CrewDragon*>(rocket->getSpacecraft())->getCrew() <<setw(15) <<setfill(' ');;
+            cout << dynamic_cast<CrewDragon*>(rocket->getSpacecraft())->getCrew() <<setw(15) <<setfill(' ');
         } else {
             cout<< "0"<<setw(15) <<setfill(' ');
         }
-        cout<< rocket->getSpacecraft()->getCargo() << setw(15) <<setfill(' ');;
+        cout<< rocket->getSpacecraft()->getCargo() << setw(15) <<setfill(' ');
         if (rocketType == "Falcon 9"){
             if (dynamic_cast<Falcon9*>(rocket)->getSatellites())
             {
@@ -147,7 +147,7 @@ void LaunchSimulator::actualLaunch(){
 
         iterator->next() ;
     } 
-    
+
 }
 
 bool LaunchSimulator::testMode(){
@@ -183,10 +183,12 @@ bool LaunchSimulator::testMode(){
     iterator = new LaunchIterator(launchList, launchList->getHead()) ;
     while(!iterator->isDone()){
         rocket = iterator->currentItem()->getRocket() ;
-        rocket->reverseState();
+        reverse = new ReverseCommand(rocket);
+        reverse->execute();
         iterator->currentItem()->setRocket(rocket) ;
         iterator->next() ;
     }
+    return true;
 }
 
 void LaunchSimulator::runStaticFire(Rocket* rocket){
@@ -296,7 +298,7 @@ Rocket* LaunchSimulator::changeConfig(Rocket* r){
         int newFuel = r->getFuel() + value ;
         r->setFuel(newFuel) ;
     }
-
+    return r;
 }
 
 

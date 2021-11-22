@@ -30,8 +30,8 @@ DragonSpacecraft::~DragonSpacecraft() {
 
 }
 
-void DragonSpacecraft::setCargo(int cargo) {
-    this->cargo = cargo;
+void DragonSpacecraft::setCargo(int c) {
+    this->cargo = c;
 }
 
 std::string DragonSpacecraft::getName() {

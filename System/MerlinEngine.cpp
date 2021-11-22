@@ -1,5 +1,5 @@
 #include "MerlinEngine.h"
-
+#include "RocketState.h"
 MerlinEngine::MerlinEngine() : Engine(){}
 
 Engine* MerlinEngine::clone() {
@@ -7,7 +7,17 @@ Engine* MerlinEngine::clone() {
 }
 
 void MerlinEngine::update() {
-    observerState = rocket->getState();
+    observerState = getRocket()->getState();
+    if (observerState)
+        if (observerState->getStage() == "Static Fire" ){
+            cout<<"Merlin Engine - "<< engineId <<" fires in low power." << endl;
+        } else if (observerState->getStage() == "Lift Off!"){
+            cout<<"Merlin Engine - " << engineId << " fires at full capacity"<<endl;
+        }
 }
 
 MerlinEngine::MerlinEngine(const MerlinEngine& c) : Engine(c) {}
+
+std::string MerlinEngine::getName() {
+    return "Merlin Engine";
+}

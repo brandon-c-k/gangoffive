@@ -52,6 +52,7 @@ private:
     int altitude ;
     vector<Engine*> engineList;
     int cargoMax;
+    static int engineCount;
 };
 
 #endif //GANGOFFIVE_ROCKET_H
