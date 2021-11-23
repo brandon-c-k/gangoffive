@@ -5,5 +5,5 @@ Command::Command(Rocket * r) {
 }
 
 Command::~Command() {
-    delete receiver;
+
 }

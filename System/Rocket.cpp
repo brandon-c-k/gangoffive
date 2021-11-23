@@ -11,6 +11,11 @@ Rocket::Rocket(int f) {
 
 Rocket::~Rocket() {
     delete this->stage;
+    delete spacecraft;
+    for (int i = 0; i < engineList.size(); i++){
+        delete engineList[i];
+    }
+    engineList.clear();
 }
 
 void Rocket::resetStage() {

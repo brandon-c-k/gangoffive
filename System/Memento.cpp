@@ -9,7 +9,6 @@ Memento::Memento(int a, int f, DragonSpacecraft* s, std::vector<Engine*> e, Rock
 }
 
 Memento::~Memento(){
-    delete spacecraft ;
 
     //delete engines
 }

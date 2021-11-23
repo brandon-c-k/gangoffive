@@ -13,7 +13,7 @@ public:
     int getID() ;
     void setID(int) ;
     Engine();
-    ~Engine();
+    virtual ~Engine();
     Rocket* getRocket();
     void setRocket(Rocket*);
     virtual std::string getName() =0;

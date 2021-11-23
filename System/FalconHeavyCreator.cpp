@@ -2,14 +2,14 @@
 #include "CrewDragon.h"
 
 Rocket* FalconHeavyCreator::createRocket(bool crewOrDragon, int crewCount = 0) {
-    DragonSpacecraft* spacecraft;
+    DragonSpacecraft* craft;
 
     if (crewOrDragon){
-        spacecraft = new CrewDragon(crewCount);
+        craft = new CrewDragon(crewCount);
     } else {
-        spacecraft = new DragonSpacecraft();
+        craft = new DragonSpacecraft();
     }
     Rocket* r  = new FalconHeavy(410000);
-    r->addSpacecraft(spacecraft);
+    r->addSpacecraft(craft);
     return r;
 }

@@ -5,7 +5,7 @@ ISS::ISS(DockingStation* d){
 }
 
 ISS::~ISS(){
-    delete arrivalPad ;
+
 }
 
 void ISS::welcome(Rocket* r){

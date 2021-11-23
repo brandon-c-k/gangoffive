@@ -4,7 +4,7 @@
  }
 
 RocketNode::~RocketNode() {
-
+    delete rocket;
 }
 
 RocketNode *RocketNode::getNext() {

@@ -113,10 +113,20 @@ void LaunchSimulator::optimizeLaunches(int sat, int crew, int cargo ) {
             cout<< "none" <<setw(20) <<setfill(' ') << endl;
         }
     }
+    delete falcon9;
+    delete falconHeavy;
 }
 
 LaunchSimulator::~LaunchSimulator() {
-
+    delete launch;
+    delete firstStage;
+    delete dock;
+    delete reverse;
+    delete success;
+    delete staticFire;
+    delete iss;
+    delete dockingPlatform;
+    delete launchList;
 }
 
 LaunchSimulator::LaunchSimulator() {
@@ -183,6 +193,7 @@ bool LaunchSimulator::testMode(){
         iterator->currentItem()->setRocket(rocket) ;
 
         iterator->next() ;
+        delete mem;
     }
     iterator = new LaunchIterator(launchList, launchList->getHead()) ;
     while(!iterator->isDone()){
@@ -192,6 +203,7 @@ bool LaunchSimulator::testMode(){
         iterator->currentItem()->setRocket(rocket) ;
         iterator->next() ;
     }
+    delete iterator;
     return true;
 }
 

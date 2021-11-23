@@ -20,6 +20,7 @@ public:
     LaunchIterator* end();
     RocketNode* getLastNode();
     RocketNode* getHead() ;
+    ~StoredLaunches();
 };
 
 

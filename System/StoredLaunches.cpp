@@ -55,3 +55,16 @@ LaunchIterator* StoredLaunches::end() {
 RocketNode* StoredLaunches::getHead(){
     return head ;
 }
+
+StoredLaunches::~StoredLaunches() {
+    RocketNode* tmp;
+    RocketNode* tmp2;
+    if (head!= nullptr){
+       tmp = head;
+       while (tmp != nullptr){
+           tmp2 = tmp->getNext();
+           delete tmp;
+           tmp = tmp2;
+       }
+    }
+}

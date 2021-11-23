@@ -24,7 +24,11 @@ int main() {
     cin >> c;
     if (LaunchSim->testMode())
     {
+        std::cout << "Ready For Actual Launch, enter any character to continue:"<<endl;
+        cin >> c;
         LaunchSim->actualLaunch();
     }
+
+    delete LaunchSim;
 }
 
